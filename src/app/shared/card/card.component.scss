@@ -1,0 +1,25 @@
+.card {
+  padding: 24px;
+  &.primary {
+    width: 317.33px;
+    height: 480px;
+    padding: 0px 0px 28px 0px;
+    gap: 0px;
+    border-radius: 12px 0px 0px 0px;
+    border: 1px 0px 0px 0px;
+    opacity: 0px;
+    border: 1px solid #CAC4D0
+
+  }
+  &.secondary{
+    width: Fill (1,048px)px;
+    height: Hug (228px)px;
+    padding: 24px 0px 0px 0px;
+    gap: 32px;
+    border-radius: 16px 0px 0px 0px;
+    opacity: 0px;
+    background: #F5F5F5;
+
+
+  }
+}
