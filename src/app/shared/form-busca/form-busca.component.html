@@ -1,5 +1,5 @@
 <app-card variant="secondary" class="form-busca">
-  <form>
+  <form (ngSubmit)="buscar()">
     <h2>Passagens</h2>
     <div class="flex-container">
       <mat-button-toggle-group aria-label="Tipo de passagem">
@@ -30,6 +30,20 @@
         <input matInput placeholder="Destino" />
         <mat-icon matSuffix>search</mat-icon>
       </mat-form-field>
+      <mat-form-field class="input-container" appearance="outline">
+        <mat-label>Data de ida</mat-label>
+        <input matInput [matDatepicker]="dataIda">
+        <mat-datepicker-toggle matIconSuffix [for]="dataIda"></mat-datepicker-toggle>
+        <mat-datepicker #dataIda></mat-datepicker>
+      </mat-form-field>
+      <mat-form-field class="input-container" appearance="outline">
+        <mat-label>Data de volta</mat-label>
+        <input matInput [matDatepicker]="dataVolta">
+        <mat-datepicker-toggle matIconSuffix [for]="dataVolta"></mat-datepicker-toggle>
+        <mat-datepicker #dataVolta></mat-datepicker>
+      </mat-form-field>
+
+      <button mat-flat-button color="primary" type="submit">BUSCAR</button>
     </div>
   </form>
 </app-card>
