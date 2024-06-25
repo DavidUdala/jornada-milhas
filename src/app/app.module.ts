@@ -1,4 +1,4 @@
-import { LOCALE_ID, NgModule } from '@angular/core';
+import { LOCALE_ID, NgModule, DEFAULT_CURRENCY_CODE } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -69,7 +69,12 @@ registerLocaleData(localePt, 'pt');
     MatDialogModule,
     HttpClientModule
   ],
-  providers: [{provide: LOCALE_ID, useValue: 'pt'}],
+  providers: [{provide: LOCALE_ID, useValue: 'pt'},
+    {
+      provide: DEFAULT_CURRENCY_CODE,
+      useValue: 'BRL'
+    },
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
