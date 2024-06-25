@@ -1,6 +1,5 @@
-import { Component, OnInit, Output } from '@angular/core';
-import { PromocaoService } from 'src/app/core/services/promocao.service';
-import { Promocao } from 'src/app/core/types/types';
+import { EstadoService } from './../../core/services/estado.service';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-home',
@@ -9,6 +8,15 @@ import { Promocao } from 'src/app/core/types/types';
 })
 
 export class HomeComponent implements OnInit {
+  constructor(private serviceEstado: EstadoService) { }
   ngOnInit(): void {
+    this.serviceEstado.listar().subscribe({
+      next: result => {
+        console.log(result);
+      },
+      error: err => {
+        console.error(err);
+      }
+    })
   }
 }
