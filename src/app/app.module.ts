@@ -33,6 +33,7 @@ import { registerLocaleData } from '@angular/common';
 import { ModalComponent } from './shared/modal/modal.component';
 import { BotaoControleComponent } from './shared/botao-controle/botao-controle.component';
 import { HttpClientModule } from '@angular/common/http';
+import { PromocoesComponent } from './pages/home/promocoes/promocoes.component';
 
 registerLocaleData(localePt, 'pt');
 @NgModule({
@@ -48,7 +49,8 @@ registerLocaleData(localePt, 'pt');
     CardDepoimentoComponent,
     FormBuscaComponent,
     ModalComponent,
-    BotaoControleComponent
+    BotaoControleComponent,
+    PromocoesComponent
   ],
   imports: [
     BrowserModule,

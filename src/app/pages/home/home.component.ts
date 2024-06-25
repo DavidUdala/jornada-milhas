@@ -9,23 +9,6 @@ import { Promocao } from 'src/app/core/types/types';
 })
 
 export class HomeComponent implements OnInit {
-
-  @Output() promocoes: Promocao[] = [];
-
-  constructor(
-    private servicePromocao: PromocaoService
-  ) { }
-
-
   ngOnInit(): void {
-    this.servicePromocao.listar().subscribe({
-      next: result => {
-        console.log(result);
-        this.promocoes = result;
-      },
-      error: err => {
-        console.error(err);
-      }
-    });
   }
 }
