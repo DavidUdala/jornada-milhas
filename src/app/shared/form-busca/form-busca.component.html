@@ -9,7 +9,7 @@
         </mat-button-toggle>
         <mat-button-toggle>SOMENTE IDA</mat-button-toggle>
       </mat-button-toggle-group>
-      <mat-chip-listbox aria-label="Seleção de Passagens">
+      <mat-chip-listbox (click)="openDialog()" aria-label="Seleção de Passagens">
         <mat-chip-option>1 Adulto</mat-chip-option>
         <mat-chip-option>Economica</mat-chip-option>
       </mat-chip-listbox>
