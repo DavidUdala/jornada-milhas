@@ -35,6 +35,7 @@ import { BotaoControleComponent } from './shared/botao-controle/botao-controle.c
 import { HttpClientModule } from '@angular/common/http';
 import { PromocoesComponent } from './pages/home/promocoes/promocoes.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { DropdownUfComponent } from './shared/form-busca/dropdown-uf/dropdown-uf.component';
 
 registerLocaleData(localePt, 'pt');
 @NgModule({
@@ -51,7 +52,8 @@ registerLocaleData(localePt, 'pt');
     FormBuscaComponent,
     ModalComponent,
     BotaoControleComponent,
-    PromocoesComponent
+    PromocoesComponent,
+    DropdownUfComponent
   ],
   imports: [
     BrowserModule,
