@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { Observable, share, shareReplay } from 'rxjs';
 import { Estado } from '../types/types';
 import { environment } from 'src/environments/environment';
 
@@ -10,12 +10,16 @@ import { environment } from 'src/environments/environment';
 export class EstadoService {
 
   private apiUrl: string = environment.apiUrl;
-
+  private cache$?: Observable<Estado[]>;
 
   constructor(private httpclient: HttpClient) { }
 
 
   listar(): Observable<Estado[]> {
-    return this.httpclient.get<Estado[]>(`${this.apiUrl}/estados`)
+    if (!this.cache$) {
+      this.cache$ = this.httpclient.get<Estado[]>(`${this.apiUrl}/estados`)
+      .pipe(shareReplay(1));
+    }
+    return this.cache$;
   }
 }
