@@ -14,6 +14,7 @@ export class EstadoService {
 
   constructor(private httpclient: HttpClient) { }
 
+
   listar(): Observable<Estado[]> {
     return this.httpclient.get<Estado[]>(`${this.apiUrl}/estados`)
   }

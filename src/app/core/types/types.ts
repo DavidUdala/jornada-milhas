@@ -10,3 +10,10 @@ export interface Estado {
   nome: string
   sigla: string
 }
+
+export interface Depoimento {
+  id: number,
+  texto: string,
+  autor: string,
+  avatar: string
+}
