@@ -36,6 +36,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { PromocoesComponent } from './pages/home/promocoes/promocoes.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { DropdownUfComponent } from './shared/form-busca/dropdown-uf/dropdown-uf.component';
+import {MatAutocompleteModule} from '@angular/material/autocomplete';
 
 registerLocaleData(localePt, 'pt');
 @NgModule({
@@ -73,7 +74,8 @@ registerLocaleData(localePt, 'pt');
     MatNativeDateModule,
     MatDialogModule,
     HttpClientModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MatAutocompleteModule
   ],
   providers: [{provide: LOCALE_ID, useValue: 'pt'},
     {
