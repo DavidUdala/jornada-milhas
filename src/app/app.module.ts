@@ -38,6 +38,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { DropdownUfComponent } from './shared/form-busca/dropdown-uf/dropdown-uf.component';
 import {MatAutocompleteModule} from '@angular/material/autocomplete';
 import { DepoimentosComponent } from './pages/home/depoimentos/depoimentos.component';
+import { SeletorPassageiroComponent } from './shared/seletor-passageiro/seletor-passageiro.component';
 
 registerLocaleData(localePt, 'pt');
 @NgModule({
@@ -56,7 +57,8 @@ registerLocaleData(localePt, 'pt');
     BotaoControleComponent,
     PromocoesComponent,
     DropdownUfComponent,
-    DepoimentosComponent
+    DepoimentosComponent,
+    SeletorPassageiroComponent
   ],
   imports: [
     BrowserModule,
