@@ -6,10 +6,8 @@ import { FormBuscaService } from 'src/app/core/services/form-busca.service';
   templateUrl: './modal.component.html',
   styleUrls: ['./modal.component.scss']
 })
-
 export class ModalComponent {
-  constructor(public formbuscaService: FormBuscaService) {
-
+  constructor (public formBuscaService: FormBuscaService) {
+    
   }
-
 }

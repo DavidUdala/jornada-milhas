@@ -1,6 +1,4 @@
 <div class="card-wrapper">
-  <app-card-busca
-    *ngFor="let promocao of promocoes"
-    [promocao]="promocao"
-  ></app-card-busca>
+    <app-card-busca  *ngFor="let item of promocoes" [promocao]="item" />
 </div>
+

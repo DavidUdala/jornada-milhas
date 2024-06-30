@@ -1,6 +1,6 @@
-import { Component, OnInit, Output } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { PromocaoService } from 'src/app/core/services/promocao.service';
-import { Promocao } from 'src/app/core/types/types';
+import { Promocao } from 'src/app/core/types/type';
 
 @Component({
   selector: 'app-promocoes',
@@ -8,21 +8,14 @@ import { Promocao } from 'src/app/core/types/types';
   styleUrls: ['./promocoes.component.scss']
 })
 export class PromocoesComponent implements OnInit {
-  @Output() promocoes: Promocao[] = [];
-
-  constructor(
-    private servicePromocao: PromocaoService
-  ) { }
-
+  promocoes!: Promocao[];
+  constructor(private service: PromocaoService) {
+  }
   ngOnInit(): void {
-    this.servicePromocao.listar().subscribe({
-      next: result => {
-        console.log(result);
-        this.promocoes = result;
-      },
-      error: err => {
-        console.error(err);
+    this.service.listar().subscribe(
+      res => {
+        this.promocoes = res;
       }
-    });
+    )
   }
 }

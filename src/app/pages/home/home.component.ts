@@ -1,22 +1,21 @@
-import { EstadoService } from './../../core/services/estado.service';
 import { Component, OnInit } from '@angular/core';
+import { PromocaoService } from 'src/app/core/services/promocao.service';
 
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss']
 })
-
 export class HomeComponent implements OnInit {
-  constructor(private serviceEstado: EstadoService) { }
+  constructor( private servicoPromocao: PromocaoService ) {
+
+  }
   ngOnInit(): void {
-    this.serviceEstado.listar().subscribe({
-      next: result => {
-        console.log(result);
-      },
-      error: err => {
-        console.error(err);
-      }
-    })
+    this.servicoPromocao.listar()
+      .subscribe(
+        resposta => {
+          console.log(resposta)
+        }
+      )
   }
 }
