@@ -1,9 +1,3 @@
 <div class="card-wrapper">
-  <app-card-depoimento
-    *ngFor="let item of depoimentos"
-    [src]="item.avatar"
-    [depoimento]="item.texto"
-    [autoria]="item.autor"
-    [alt]="item.autor"
-  ></app-card-depoimento>
+    <app-card-depoimento  *ngFor="let item of depoimentos" [depoimento]="item" />
 </div>
